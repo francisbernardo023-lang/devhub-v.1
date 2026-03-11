@@ -41,7 +41,7 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 .create-btn {
-    color: #2563eb; /* soft modern blue */
+    color: #2563eb;
     text-decoration: underline;
     font-weight: 500;
     transition: opacity 0.2s ease;
@@ -50,3 +50,4 @@ body {
 .create-btn:hover {
     opacity: 0.7;
 }
+
