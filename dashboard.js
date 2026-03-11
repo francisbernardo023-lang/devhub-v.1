@@ -23,7 +23,7 @@ if (hour < 12) {
 }
 const d = new Date();
 const day = d.getDate();
-const month = d.getMonth() + 1; // Add 1 because months are 0-11
+const month = d.getMonth() + 1;
 const year = d.getFullYear();
 
 document.getElementById('current-date').textContent = `${day}/${month}/${year}`;
@@ -39,4 +39,5 @@ if (!projects) {
 }
 
 document.querySelector(".card:nth-child(1) p").textContent =
+
     projects + " ongoing";
