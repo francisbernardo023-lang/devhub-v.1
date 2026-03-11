@@ -85,19 +85,16 @@ p {
 .forgot-password a:hover {
     text-decoration: underline;
 }
-/* Container to center the buttons */
 .social-container {
   display: flex;
   gap: 15px;
   justify-content: center;
   margin-top: 20px;
 }
-
-/* Base circular button style */
 .social-btn {
   width: 50px;
   height: 50px;
-  border-radius: 50%; /* This makes it a circle */
+  border-radius: 50%; 
   border: none;
   display: flex;
   align-items: center;
@@ -107,8 +104,6 @@ p {
   transition: transform 0.2s, background-color 0.2s;
   color: white;
 }
-
-/* Platform-specific colors */
 .google { background-color: #db4437; }
 .facebook { background-color: #1877f2; }
 .x-corp { background-color: #000000; }
@@ -117,6 +112,7 @@ p {
   transform: scale(1.1);
   opacity: 0.9;
 }
+
 
 
 
