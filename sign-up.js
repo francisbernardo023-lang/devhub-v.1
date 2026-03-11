@@ -84,4 +84,5 @@ if (email === storedEmail) {
   localStorage.setItem('password', passwordinput);
 
   console.log("Form submitted successfully!", { email, password });
+  window.location.href = "log in.html";
 });

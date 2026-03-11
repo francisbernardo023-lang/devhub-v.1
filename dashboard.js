@@ -27,17 +27,8 @@ const month = d.getMonth() + 1;
 const year = d.getFullYear();
 
 document.getElementById('current-date').textContent = `${day}/${month}/${year}`;
-
-
-
-welcomeText.textContent = greeting + ", Developer.";
-let projects = localStorage.getItem("projectsCount");
-
-if (!projects) {
-    projects = 3;
-    localStorage.setItem("projectsCount", projects);
-}
-
-document.querySelector(".card:nth-child(1) p").textContent =
-
-    projects + " ongoing";
+document.addEventListener("DOMContentLoaded", () => {
+    const count = localStorage.getItem("projectsCount") || 0;
+    
+    document.getElementById("active-projects-count").textContent = count;
+});
