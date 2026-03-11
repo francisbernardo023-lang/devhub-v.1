@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="log in.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+<div class="login-container">
+    <h2>Welcome Back</h2>
+
+    <form id="login-form">
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input name="email" type="email" id="email" placeholder="Enter your email" autocomplete="email">
+        </div>
+        <p id="email-error" type="alert" style="color: red; display: none;">
+    Invalid email or password
+</p>
+
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input name="password" type="password" id="password" placeholder="Enter your password" autocomplete="current-password">
+            <p id="password-error" type="alert" style="color: red; display: none;">
+                Invalid email or password
+            </p>
+        </div>
+
+<p class="forgot-password">
+    <a href="forget-password.html">Forgot password?</a>
+</p>
+
+        <button type="submit">Log In</button>
+        <p class="signup-link">
+    Don’t have an Account? <a href="sign-up.html">Sign up</a>
+</p>
+<div class="social-container">
+
+  <button type="button" class="social-btn google" onclick="loginWithGoogle()">
+    <i class="fab fa-google"></i>
+  </button>
+
+  <button type="button" class="social-btn facebook" onclick="loginWithFacebook()">
+    <i class="fab fa-facebook-f"></i>
+
+  </button>
+
+  <button type="button" class="social-btn x-corp" onclick="loginWithX()">
+   <i class="fa-brands fa-x-twitter"></i>
+</button>
+  </button>
+</div>
+
+    </form>
+</div>
+<script src="log.js"></script>
+</body>
+
+</html>

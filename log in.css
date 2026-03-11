@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #9900ff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    transition: 0.2s ease;
+}
+.signup-link {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+p {
+    color: #060606;
+    font-size: 18px;
+}
+.login-container {
+    text-align: left;
+}
+.forgot-password {
+    text-align: right;
+    font-size: 14px;
+    margin-top: -10px;
+}
+
+.forgot-password a {
+    text-decoration: none;
+    color: #ae00ff;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+/* Container to center the buttons */
+.social-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Base circular button style */
+.social-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* This makes it a circle */
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  transition: transform 0.2s, background-color 0.2s;
+  color: white;
+}
+
+/* Platform-specific colors */
+.google { background-color: #db4437; }
+.facebook { background-color: #1877f2; }
+.x-corp { background-color: #000000; }
+
+.social-btn:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+
+
+
