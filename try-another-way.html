@@ -37,5 +37,29 @@
             <a href="log in.html"><i class="fas fa-arrow-left"></i> Back to login</a>
         </div>
     </div>
-</body>
-</html>
+
+    <div id="email-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sign in with Email</h2>
+            <form id="email-signin-form">
+                <input type="email" id="signin-email" placeholder="Enter your email" required>
+                <p id="email-error" style="color: red; display: none;"></p>
+                <button type="submit">Continue</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="phone-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sign in with Phone</h2>
+            <form id="phone-signin-form">
+                <input type="tel" id="signin-phone" placeholder="Enter your phone number" required>
+                <p id="phone-error" style="color: red; display: none;"></p>
+                <button type="submit">Continue</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="try-another-way.js"></script>

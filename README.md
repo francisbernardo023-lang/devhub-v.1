@@ -1,1 +1,1 @@
-still currently in underdevelopment
+currently in development

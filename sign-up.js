@@ -1,88 +1,80 @@
 const form = document.getElementById('signup-button').closest('form');
 
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PASSWORD_MIN_LENGTH = 8;
+
+function isValidEmail(email) {
+  return email && EMAIL_REGEX.test(email);
+}
+
+function validatePassword(password) {
+  if (!password) return 'Password cannot be empty!';
+  if (password.length < PASSWORD_MIN_LENGTH) return 'Password must be at least 8 characters long.';
+  if (!/\d/.test(password)) return 'Password must contain at least one number.';
+  if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) return 'Password must contain at least one special character.';
+  if (!/[A-Z]/.test(password)) return 'Password must contain at least one uppercase letter.';
+  if (!/[a-z]/.test(password)) return 'Password must contain at least one lowercase letter.';
+  return null;
+}
+
+function clearErrors() {
+  document.getElementById('email-error').textContent = '';
+  document.getElementById('password-error').textContent = '';
+  document.getElementById('confirm-password-error').textContent = '';
+}
+
 form.addEventListener('submit', function(event) {
-  event.preventDefault(); 
+  event.preventDefault();
+  clearErrors();
 
-  const email = document.getElementById('email').value;
-  const passwordinput = document.getElementById('password').value;
-  const confirmPasswordInput = document.getElementById('confirm-password');
-  const errordisplay = document.getElementById('password-error');
-  const emailErrorDisplay = document.getElementById('email-error');
-  const confirmPasswordErrorDisplay = document.getElementById('confirm-password-error');
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirm-password').value;
+  const emailError = document.getElementById('email-error');
+  const passwordError = document.getElementById('password-error');
+  const confirmPasswordError = document.getElementById('confirm-password-error');
 
-  errordisplay.textContent = "";
-  emailErrorDisplay.textContent = "";
-  confirmPasswordErrorDisplay.textContent = "";
-
-  if (email === "") {
-    emailErrorDisplay.textContent = "Email cannot be empty!";
-    return;
-  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    emailErrorDisplay.textContent = "Please enter a valid email address!";
-    return;
-  } else {
-    emailErrorDisplay.textContent = "";
-  }
-
-
-
-  if (passwordinput === "") {
-    errordisplay.textContent = "Password cannot be empty!";
-    return;
-  } else if (confirmPasswordInput.value === "") {
-    confirmPasswordErrorDisplay.textContent = "Please confirm your password!";
-    return;
-  } else if (passwordinput !== confirmPasswordInput.value) {
-    confirmPasswordErrorDisplay.textContent = "Passwords do not match!";
-    return;
-  } else (passwordinput === confirmPasswordInput.value)
-        errordisplay.textContent = "";
-
-  if (passwordinput.length < 8) {
-    alert("Password must be at least 8 characters long.");
-    return;
-  } else if (!/\d/.test(passwordinput)) {
-    alert("Password must contain at least one number.");
-    return;
-  } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(passwordinput)) {
-    alert("Password must contain at least one special character.");
-    return;
-  } else if (!/[A-Z]/.test(passwordinput)) {
-    alert("Password must contain at least one uppercase letter.");
-    return;
-  } else if (!/[a-z]/.test(passwordinput)) {
-    alert("Password must contain at least one lowercase letter.");
+  // Validate email
+  if (!email) {
+    emailError.textContent = 'Email cannot be empty!';
     return;
   }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    alert("Please enter a valid email address.");
+  if (!isValidEmail(email)) {
+    emailError.textContent = 'Please enter a valid email address!';
     return;
-  } 
-  const storedEmail = localStorage.getItem("user");
+  }
 
-if (email === storedEmail) {
-  alert("This email is already registered.");
-  return;
-} else {
-  localStorage.setItem("user", email); 
-  alert("Registration successful!");
-  window.location.href = "log in.html";
-}const passwordField = document.getElementById("password");
-    const toggleButton = document.getElementById("toggle-password");
+  // Validate password
+  const passwordValidation = validatePassword(password);
+  if (passwordValidation) {
+    passwordError.textContent = passwordValidation;
+    return;
+  }
 
-    toggleButton.addEventListener("click", function() {
-        if (passwordField.type === "password") {
-            passwordField.type = "text";
-            toggleButton.textContent = "Hide Password";
-        } else {
-            passwordField.type = "password";
-            toggleButton.textContent = "Show Password";
-        }
-    });
+  // Validate confirm password
+  if (!confirmPassword) {
+    confirmPasswordError.textContent = 'Please confirm your password!';
+    return;
+  }
+  if (password !== confirmPassword) {
+    confirmPasswordError.textContent = 'Passwords do not match!';
+    return;
+  }
 
-  localStorage.setItem('user', email);
-  localStorage.setItem('password', passwordinput);
+  // Check if email already registered
+  try {
+    const storedEmail = localStorage.getItem('user');
+    if (email === storedEmail) {
+      emailError.textContent = 'This email is already registered.';
+      return;
+    }
 
-  console.log("Form submitted successfully!", { email, password });
-  window.location.href = "log in.html";
+    localStorage.setItem('user', email);
+    localStorage.setItem('password', password);
+    alert('Registration successful!');
+    window.location.href = 'log in.html';
+  } catch (error) {
+    alert('An error occurred during registration. Please try again.');
+    console.error('Registration error:', error);
+  }
 });
