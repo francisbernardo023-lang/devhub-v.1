@@ -5,7 +5,8 @@ body {
 }
 .projects {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
+    flex-direction: row;
 }
 .logo{
     text-decoration: none;
@@ -62,4 +63,59 @@ body {
 .main-content {
     flex: 1;
     padding: 40px;
+}
+
+@media (max-width: 768px) {
+    .projects {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .sidebar li {
+        flex: 1;
+        min-width: 100px;
+    }
+
+    .sidebar li a {
+        text-align: center;
+        padding: 8px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        padding: 10px;
+    }
+
+    .sidebar li a {
+        font-size: 13px;
+        padding: 6px;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    .main-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .project-card {
+        padding: 15px;
+    }
 }

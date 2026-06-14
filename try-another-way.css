@@ -97,4 +97,23 @@
         .back-link a:hover {
             text-decoration: underline;
         }
-   
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            .login-option button {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .login-option {
+                margin-bottom: 12px;
+            }
+        }

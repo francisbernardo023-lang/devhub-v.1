@@ -6,7 +6,8 @@ body {
 
 .dashboard {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
+    flex-direction: row;
 }
 
 .sidebar {
@@ -184,4 +185,94 @@ body {
     font-size: 0.8rem;
     opacity: 0.8;
     margin-top: 0.25rem;
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .sidebar li {
+        margin: 0;
+        flex: 1;
+        min-width: 100px;
+    }
+
+    .sidebar li a {
+        padding: 8px;
+        text-align: center;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    .topbar {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .logout-btn {
+        width: 100%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .bug-notification {
+        left: 10px;
+        right: 10px;
+        top: auto;
+        bottom: 20px;
+        width: auto;
+    }
+
+    #current-date {
+        display: block;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        padding: 10px;
+    }
+
+    .sidebar li a {
+        font-size: 13px;
+        padding: 6px;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+
+    .topbar h1 {
+        font-size: 1.3rem;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card h3 {
+        font-size: 1rem;
+    }
+
+    .bugs-list {
+        grid-template-columns: 1fr;
+    }
 }
