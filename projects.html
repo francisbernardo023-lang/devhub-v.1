@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>projects</title>
+    <title>Projects | DevHub</title>
     <link rel="stylesheet" href="projects.css">
 </head>
 <body>
@@ -11,17 +11,53 @@
         <aside class="sidebar">
             <h2><a href="dashboard.html" class="logo">💻Dev Hub</a></h2>
             <ul>
-                <li><a href="new-project.html">+ Create Project</a></li>
+                <li><a href="projects.html" aria-current="page">Projects</a></li>
+                <li><a href="ideas.html">Ideas</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="new-project.html" class="create-btn">+ Create Project</a></li>
             </ul>
         </aside>
+
         <main class="main-content">
-            <h2>Existing projects</h2>
-            <div id="projects"></div>
-                <h3>GAME DEVELOPMENT "PLATFORMER"</h3>
-                <p>Last updated: 2024-06-01</p>
-                <p>Status: In Progress</p>
-            </div>
+            <header class="page-header">
+                <div>
+                    <p class="eyebrow">DEVHUB WORKSPACE</p>
+                    <h1>Projects</h1>
+                    <p class="page-description">Keep track of what you’re building.</p>
+                </div>
+                <a href="new-project.html" class="primary-btn">+ Create Project</a>
+            </header>
+
+            <section aria-labelledby="existing-projects-heading">
+                <h2 id="existing-projects-heading" class="section-title">Existing projects</h2>
+                <div id="projects" class="project-grid">
+                    <article class="project-card">
+                        <div class="card-heading">
+                            <span class="project-icon" aria-hidden="true">🎮</span>
+                            <span class="status status-progress">In Progress</span>
+                        </div>
+                        <h3>Game Development “Platformer”</h3>
+                        <p class="project-description">A platformer game currently in development.</p>
+                        <p class="project-date">Last updated <time datetime="N/A">June 1, 2024</time></p>
+                    </article>
+
+                    <article class="project-card projects2">
+                        <div class="card-heading">
+                            <span class="project-icon" aria-hidden="true">♠️</span>
+                            <span class="status status-partial">Partially Completed</span>
+                        </div>
+                        <h3>
+                            <a class="project-link" href="https://github.com/francisbernardo023-lang/a-meh-poker-game-i-guess" target="_blank" rel="noopener noreferrer">
+                                Poker Game <span aria-hidden="true">↗</span>
+                            </a>
+                        </h3>
+                        <p class="project-description">A poker game project hosted on GitHub.</p>
+                        <p class="project-date">Last updated <time datetime="2026-11-06">November 6, 2026</time></p>
+                    </article>
+                </div>
+            </section>
         </main>
     </div>
+    <script src="projects.js"></script>
 </body>
 </html>
