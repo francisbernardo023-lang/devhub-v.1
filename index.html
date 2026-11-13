@@ -1,51 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="Francis Bernardo">
-<meta name="description" content="DevHub - Personal developer dashboard">
-<title>DevHub</title>
-
-<link rel="icon" href="devhublogo.png" type="image/x-icon">
-<link rel="stylesheet" href="script.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Francis Bernardo">
+    <meta name="description" content="DevHub is your focused workspace for developer projects, ideas, and progress.">
+    <meta name="theme-color" content="#090d18">
+    <title>DevHub — Your space to build</title>
+    <link rel="icon" href="devhublogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="script.css">
 </head>
-
 <body>
+    <div class="page-shell">
+        <header class="site-header">
+            <a class="brand" href="index.html" aria-label="DevHub home">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" fill="none">
+                        <path d="M16 3.5 28 10v12L16 28.5 4 22V10L16 3.5Z" stroke="currentColor" stroke-width="1.7"/>
+                        <path d="m12 12-4 4 4 4m8-8 4 4-4 4m-2-10-4 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <span>devhub<span class="brand-period">.</span></span>
+            </a>
+            <nav class="header-actions" aria-label="Main navigation">
+                <a class="nav-link" href="#features">Features</a>
+                <a class="nav-cta" href="log in.html">Sign in <span aria-hidden="true">↗</span></a>
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/>
+                        <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M20.2 15.1A8.5 8.5 0 0 1 8.9 3.8 8.5 8.5 0 1 0 20.2 15.1Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </nav>
+        </header>
 
-<header>
-    <h1>DevHub</h1>
-    <p>Your personal developer workspace.</p>
-</header>
+        <main>
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="hero-copy">
+                    <div class="eyebrow"><span class="status-dot"></span> A calmer way to build</div>
+                    <h1 id="hero-title">Make room for<br>your <span>next big idea.</span></h1>
+                    <p class="hero-description">One focused space for your projects, bright ideas, and the little wins that move your work forward.</p>
+                    <div class="hero-actions">
+                        <a class="primary-button" href="log in.html">Get started <span aria-hidden="true">↗</span></a>
+                        <a class="text-button" href="#features">Explore DevHub <span aria-hidden="true">↓</span></a>
+                    </div>
+                    <div class="social-proof">
+                        <div class="avatar-stack" aria-hidden="true">
+                            <span class="avatar avatar-one">F</span>
+                            <span class="avatar avatar-two">D</span>
+                            <span class="avatar avatar-three">✳</span>
+                        </div>
+                        <p>Made for people who love to build.</p>
+                    </div>
+                </div>
 
-<main>
+                <div class="workspace-wrap" aria-label="Preview of the DevHub workspace">
+                    <div class="glow-orb" aria-hidden="true"></div>
+                    <div class="workspace-card">
+                        <div class="workspace-topbar">
+                            <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+                            <span class="workspace-label">YOUR WORKSPACE</span>
+                            <span class="live-indicator"><i></i> Live</span>
+                        </div>
+                        <div class="workspace-content">
+                            <div class="workspace-greeting">
+                                <span class="greeting-label">MONDAY, OCTOBER 21</span>
+                                <h2>Good things take focus<span>.</span></h2>
+                                <p>Here’s what’s happening with your work.</p>
+                            </div>
+                            <div class="overview-row">
+                                <div class="overview-tile">
+                                    <span class="tile-icon violet" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4.5" width="17" height="15" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                                    </span>
+                                    <span class="tile-label">Projects</span>
+                                    <strong>08</strong>
+                                    <span class="tile-note">2 in progress</span>
+                                </div>
+                                <div class="overview-tile">
+                                    <span class="tile-icon mint" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3.5v17m-6-12h9a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                                    </span>
+                                    <span class="tile-label">Ideas saved</span>
+                                    <strong>24</strong>
+                                    <span class="tile-note">A little inspiration</span>
+                                </div>
+                            </div>
+                            <div class="recent-projects">
+                                <div class="section-heading"><span>Recent projects</span><a href="projects.html">View all <span aria-hidden="true">→</span></a></div>
+                                <div class="project-row">
+                                    <span class="project-symbol project-symbol-one" aria-hidden="true">◈</span>
+                                    <span class="project-name">Portfolio refresh<small>Personal · Updated 2h ago</small></span>
+                                    <span class="progress-ring progress-75" aria-label="75% complete"><span>75%</span></span>
+                                </div>
+                                <div class="project-row">
+                                    <span class="project-symbol project-symbol-two" aria-hidden="true">⌘</span>
+                                    <span class="project-name">Snippet library<small>Development · Updated yesterday</small></span>
+                                    <span class="progress-ring progress-40" aria-label="40% complete"><span>40%</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floating-note"><span class="note-check" aria-hidden="true">✓</span><span>Small steps add up.<small>Keep your momentum going</small></span></div>
+                </div>
+            </section>
 
-<section class="hero">
-    <h2>Organize your projects, ideas, and progress</h2>
-    <p>DevHub helps you track coding projects, store ideas, and build better software.</p>
+            <section class="features" id="features" aria-labelledby="features-title">
+                <div class="features-heading">
+                    <div>
+                        <span class="section-kicker">YOUR WORK, IN FLOW</span>
+                        <h2 id="features-title">Everything in its right place.</h2>
+                    </div>
+                    <p>Less scattered. More creating. A simple HUB to keep your best work moving.</p>
+                </div>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <span class="feature-icon feature-violet" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4.5" width="17" height="15" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                        </span>
+                        <h3>Projects, progressing</h3>
+                        <p>Keep priorities clear and see every project move from first thought to finished work.</p>
+                        <span class="feature-arrow" aria-hidden="true">↗</span>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-icon feature-mint" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M9 18h6m-5 3h4m-2-19a7 7 0 0 0-4 12.75c.6.4 1 1.05 1 1.75h6c0-.7.4-1.35 1-1.75A7 7 0 0 0 12 2Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                        <h3>Ideas, captured</h3>
+                        <p>Save those sparks of inspiration before they disappear—and find them when you need them.</p>
+                        <span class="feature-arrow" aria-hidden="true">↗</span>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-icon feature-amber" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="m8 8-4 4 4 4m8-8 4 4-4 4m-2-10-4 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                        <h3>Bugs, untangled</h3>
+                        <p>Track the tricky bits, document the fix, and get back to building with confidence.</p>
+                        <span class="feature-arrow" aria-hidden="true">↗</span>
+                    </article>
+                </div>
+            </section>
+        </main>
 
-    <a href="log in.html" class="btn">Get Started →</a>
-</section>
-
-<section class="preview">
-    <h3>What you can do</h3>
-    <ul>
-        <li>📁 Track development projects</li>
-        <li>💡 Save coding ideas</li>
-        <li>🐞 Log bugs and fixes</li>
-        <li>🤖 Future AI assistant (Pen)</li>
-    </ul>
-</section>
-
-</main>
-
-<footer>
-    <p>Built by Francis Bernardo</p>
-</footer>
-
-<button id= "theme-toggle" class = "btn" >🌙</button>
-
-<script src="script.js"></script>
-
+        <footer class="site-footer">
+            <a class="footer-brand" href="index.html">devhub<span>.</span></a>
+            <p>Built with care by APKOR.(in development)</p>
+            <a href="log in.html">Your next idea starts here <span aria-hidden="true">↗</span></a>
+        </footer>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
