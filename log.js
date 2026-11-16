@@ -45,19 +45,15 @@ loginForm.addEventListener("submit", function(event) {
         emailErrorDisplay.style.display = "block";
         passwordErrorDisplay.style.display = "block"; 
     }
-    const passwordField = document.getElementById("password");
-    const toggleButton = document.getElementById("toggle-password");
-
-    toggleButton.addEventListener("click", function() {
-        if (passwordField.type === "password") {
-            passwordField.type = "text";
-            toggleButton.textContent = "Hide Password";
-        } else {
-            passwordField.type = "password";
-            toggleButton.textContent = "Show Password";
-        }
-    });
-
     localStorage.setItem('user', emailInput);
     localStorage.setItem('password', passwordInput.value);
 });
+
+function handleCredentialResponse(response) {
+        const encodedPayload = response.credential.split(".")[1]
+            .replace(/-/g, "+")
+            .replace(/_/g, "/");
+        const payload = JSON.parse(atob(encodedPayload));
+        console.log("Signed in user:", payload.name, payload.email);
+        alert("Welcome, " + payload.name + "!");
+    }

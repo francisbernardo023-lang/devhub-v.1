@@ -3,60 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <meta name="theme-color" content="#090d18">
+    <title>Sign in | DevHub</title>
     <link rel="stylesheet" href="log in.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
-<div class="login-container">
-    <h2>Welcome Back</h2>
+    <div class="auth-page">
+        <a class="brand" href="index.html" aria-label="DevHub home">
+            <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none">
+                    <path d="M16 3.5 28 10v12L16 28.5 4 22V10L16 3.5Z" stroke="currentColor" stroke-width="1.7"/>
+                    <path d="m12 12-4 4 4 4m8-8 4 4-4 4m-2-10-4 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+            <span>devhub<span class="brand-period">.</span></span>
+        </a>
 
-    <form id="login-form">
-        <div class="input-group">
-            <label for="email">Email</label>
-            <input name="email" type="email" id="email" placeholder="Enter your email" autocomplete="email">
-        </div>
-        <p id="email-error" type="alert" style="color: red; display: none;">
-    Invalid email or password
-</p>
+        <main class="auth-stage">
+            <svg class="auth-cord" viewBox="0 0 1000 700" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                    <linearGradient id="cord-gradient" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="#78dfc0"/>
+                        <stop offset=".52" stop-color="#9c8bff"/>
+                        <stop offset="1" stop-color="#b6aaff"/>
+                    </linearGradient>
+                </defs>
+                <path class="cord-line" d="M 20 640 C 180 640 280 650 370 600 S 450 530 495 450 S 550 360 640 355"/>
+                <circle class="cord-terminal" cx="640" cy="355" r="5"/>
+            </svg>
 
-        <div class="input-group">
-            <label for="password">Password</label>
-            <input name="password" type="password" id="password" placeholder="Enter your password" autocomplete="current-password">
-            <p id="password-error" type="alert" style="color: red; display: none;">
-                Invalid email or password
-            </p>
-        </div>
+            <section class="auth-story" aria-labelledby="story-title">
+                <p class="eyebrow"><span class="status-dot"></span> YOUR SPACE TO BUILD</p>
+                <h1 id="story-title">Good to have<br>you <span>back.</span></h1>
+                <p class="story-copy">Pick up where you left off. Your projects, ideas, and next big thing are right here.</p>
+                <div class="story-note">
+                    <span class="note-check" aria-hidden="true">✓</span>
+                    <span>Make progress at your own pace.<small>One focused step at a time.</small></span>
+                </div>
+            </section>
 
-<p class="forgot-password">
-    <a href="forget-password.html">Forgot password?</a>
-</p>
+            <section class="auth-card" aria-labelledby="auth-title">
+                <div class="card-orb" aria-hidden="true"></div>
+                <p class="card-kicker">WELCOME BACK</p>
+                <h2 id="auth-title">Sign in to DevHub</h2>
+                <p class="card-description">Your workspace is waiting for you.</p>
 
-        <button type="submit">Log In</button>
-        <p class="signup-link">
-    Don’t have an Account? <a href="sign-up.html">Sign up</a>
-</p>
-<div class="social-container">
+                <form id="login-form" novalidate>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input name="email" type="email" id="email" placeholder="you@example.com" autocomplete="email" aria-describedby="email-error">
+                        <p id="email-error" class="form-error" role="alert"></p>
+                    </div>
 
-  <button type="button" class="social-btn google" onclick="loginWithGoogle()">
-    <i class="fab fa-google"></i>
-  </button>
+                    <div class="input-group">
+                        <div class="label-row">
+                            <label for="password">Password</label>
+                            <a class="forgot-password" href="forget-password.html">Forgot password?</a>
+                        </div>
+                        <div class="password-field">
+                            <input name="password" type="password" id="password" placeholder="Enter your password" autocomplete="current-password" aria-describedby="password-error">
+                            <button class="password-toggle" type="button" data-password-toggle aria-label="Show password" aria-pressed="false" aria-controls="password">
+                                <svg class="eye-open" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.7"/>
+                                </svg>
+                                <svg class="eye-closed" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="m3 3 18 18M10.6 10.6a2 2 0 0 0 2.8 2.8M9.9 5.2A10.8 10.8 0 0 1 12 5c6 0 9.5 7 9.5 7a17 17 0 0 1-3.1 3.8M6.2 6.2C3.9 7.8 2.5 12 2.5 12s3.5 7 9.5 7a10 10 0 0 0 3-.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <p id="password-error" class="form-error" role="alert"></p>
+                    </div>
 
-  <button type="button" class="social-btn facebook" onclick="loginWithFacebook()">
-    <i class="fab fa-facebook-f"></i>
+                    <button class="submit-button" type="submit">Sign in <span aria-hidden="true">↗</span></button>
 
-  </button>
+                    <div class="auth-divider"><span>or continue with</span></div>
+                    <div id="g_id_onload"
+                         data-client_id="884013839075-0sne5jhlou7sma1ku81okjqhhvpotn40.apps.googleusercontent.com"
+                         data-callback="handleCredentialResponse">
+                    </div>
+                    <div class="google-signin">
+                        <div class="g_id_signin" data-type="standard"></div>
+                    </div>
 
-  <button type="button" class="social-btn x-corp" onclick="loginWithX()">
-   <i class="fa-brands fa-x-twitter"></i>
-</button>
-  </button>
-</div>
+                    <p class="auth-switch">New to DevHub? <a href="sign-up.html">Create an account</a></p>
+                </form>
+            </section>
+        </main>
 
-    </form>
-</div>
-<script src="log.js"></script>
+        <footer class="auth-footer">
+            <span>DEVHUB · A CALMER WAY TO BUILD</span>
+            <a href="index.html">Back to home <span aria-hidden="true">↗</span></a>
+        </footer>
+    </div>
+    <script src="auth.js"></script>
+    <script src="log.js"></script>
 </body>
-
 </html>
